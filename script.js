@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const isbnInput = document.getElementById("isbn");
     const createIsbnInput = document.getElementById("createIsbn");
     const updateIsbnInput = document.getElementById("updateIsbn");
+    const updateBookNameInput = document.getElementById("updateBookName");
+    const updateAuthorNameInput = document.getElementById("updateAuthorName");
+    const updatePriceInput = document.getElementById("updatePrice");
+    const updateReviewInput = document.getElementById("updateReview");
     const deleteIsbnInput = document.getElementById("deleteIsbn");
     const bookNameInput = document.getElementById("book_name");
     const authorNameInput = document.getElementById("author_name");
+    const priceInput = document.getElementById("price");
     const reviewInput = document.getElementById("review");
     const reviewContainer = document.getElementById("reviewContainer");
     const createMessage = document.getElementById("createMessage");
@@ -39,10 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const isbn = createIsbnInput.value.trim();
         const bookName = bookNameInput.value.trim();
         const authorName = authorNameInput.value.trim();
+        const price = priceInput.value.trim();
         const review = reviewInput.value.trim();
 
-        if (isbn !== "" && bookName !== "" && authorName !== "" && review !== "") {
-            createReview(isbn, bookName, authorName, review);
+        if (isbn !== "" && bookName !== "" && authorName !== "" && price !== "" && review !== "") {
+            createReview(isbn, bookName, authorName, price, review);
         } else {
             createMessage.textContent = "Please fill in all fields.";
         }
@@ -52,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const isbn = updateIsbnInput.value.trim();
         const bookName = updateBookNameInput.value.trim();
         const authorName = updateAuthorNameInput.value.trim();
+        const price = updatePriceInput.value.trim();
         const review = updateReviewInput.value.trim();
 
         if (isbn !== "") {
@@ -100,11 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-    function createReview(isbn, bookName, authorName, review) {
+    function createReview(isbn, bookName, authorName, price, review) {
         const data = {
             isbn: isbn,
             book_name: bookName,
             author_name: authorName,
+            price: price,
             review: review
         };
 
@@ -131,11 +139,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function updateReview(isbn, bookName, authorName, review) {
+    function updateReview(isbn, bookName, authorName,price, review) {
         const data = {
             isbn: isbn,
             book_name: bookName,
             author_name: authorName,
+            price:price,
             review: review
         };
 
