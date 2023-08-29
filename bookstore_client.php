@@ -162,7 +162,7 @@ $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Tr
 		if(empty($response))
 			echo "Price of that book is not available";
 		else
-			echo "Price: " . $response;
+			echo "Price: $" . $response;
 	}
    ?>
   </h3>
