@@ -1,7 +1,7 @@
 <?php
 require 'nusoap.php';
 
-$client = new nusoap_client("http://localhost/Web_Services/Assignment/Book_Library_Webservices/bookstore_server.php?wsdl");
+$client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/bookstore_server.php?wsdl");
 
 ?>
 <!DOCTYPE html>

@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header class="header">
     <a href="#" class="logo">The Paper Trail</a>
     <nav class="nav-items">
-        <a href="homepage.html">Home</a>
+        <a href="homepage.php">Home</a>
         <a href="isbn.php">ISBN Validation</a>
         <a href="index.html">Book Review</a>
         <a href="bookstore_client.php">Price Check</a>
