@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    background: url('book_background.jpg') no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    display: inline-block;
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #555;
+}
+
+.section {
+    margin-top: 40px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="button"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #555;
+}
+
+#reviewContainer {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #302f49;
+    padding: 40px 75px;
+    bottom: 0;
+    width: 90%;
+    height: 220px; 
+  }
+
+.footer .copy {
+color: #fff;
+}
+
+.bottom-links {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 40px 0;
+}
+
+.bottom-links .links {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0 40px;
+}
+
+.bottom-links .links span {
+font-size: 20px;
+color: #fff;
+text-transform: uppercase;
+margin: 10px 0;
+}
+
+.bottom-links .links a {
+text-decoration: none;
+color: #a1a1a1;
+padding: 10px 20px;
+}

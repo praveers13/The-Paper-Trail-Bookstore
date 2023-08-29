@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bestseller>
+<book>
+    <name>To Kill a Mockingbird</name>
+    <description>
+   A classic novel that addresses issues of racism and moral growth.
+   </description>
+</book>
+<book>
+    <name>The Hobbit</name>
+    <description>
+   An adventure fantasy novel set in Middle-earth.
+   </description>
+</book>
+<book>
+    <name>The Great Gatsby</name>
+    <description>
+   A story of wealth, excess, and the American Dream.
+   </description>
+</book>
+</bestseller>
