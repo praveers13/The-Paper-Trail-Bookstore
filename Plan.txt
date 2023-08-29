@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS `book_review` (
 
 INSERT INTO `book_review` (`isbn`, `book_name`, `author_name`, `price`, `review`)
 VALUES
-    ('978-0061122415', 'To Kill a Mockingbird', 'Harper Lee', 100,  'A classic novel that addresses issues of racism and moral growth.'),
-    ('978-0307474278', '1984', 'George Orwell', 100, 'A dystopian novel that explores themes of totalitarianism and censorship.'),
-    ('978-1400031702', 'The Great Gatsby', 'F. Scott Fitzgerald', 100, 'A story of wealth, excess, and the American Dream.'),
-    ('978-0544003415', 'The Hobbit', 'J.R.R. Tolkien', 100, 'An adventure fantasy novel set in Middle-earth.'),
-    ('978-0679783268', 'Pride and Prejudice', 'Jane Austen', 100, 'A classic romance novel featuring Elizabeth Bennet and Mr. Darcy');
+    ('978-0061122415', 'To Kill a Mockingbird', 'Harper Lee', $15,  'A classic novel that addresses issues of racism and moral growth.'),
+    ('978-0307474278', '1984', 'George Orwell', $15, 'A dystopian novel that explores themes of totalitarianism and censorship.'),
+    ('978-1400031702', 'The Great Gatsby', 'F. Scott Fitzgerald', $15, 'A story of wealth, excess, and the American Dream.'),
+    ('978-0544003415', 'The Hobbit', 'J.R.R. Tolkien', $20, 'An adventure fantasy novel set in Middle-earth.'),
+    ('978-0679783268', 'Pride and Prejudice', 'Jane Austen', $15, 'A classic romance novel featuring Elizabeth Bennet and Mr. Darcy');
