@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchReviews(isbn) {
         reviewContainer.innerHTML = "Fetching reviews...";
     
-        fetch("http://localhost/Assignment/Book_Library_Webservices/read.php?isbn=" + isbn)
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore?isbn=" + isbn)
             .then(response => response.json())
             .then(data => {
                 if (data.records) {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         createMessage.textContent = "Creating review...";
 
-        fetch("http://localhost/Assignment/Book_Library_Webservices/create.php", {
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/create.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         updateMessage.textContent = "Updating review...";
 
-        fetch("http://localhost/Assignment/Book_Library_Webservices/update.php", {
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/update.php", {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isbn: isbn
         };
     
-        fetch("http://localhost/Assignment/Book_Library_Webservices/delete.php", {
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/delete.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
