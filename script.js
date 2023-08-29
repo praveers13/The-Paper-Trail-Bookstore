@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="review-item">
                                 <p><strong>Book Name:</strong> ${review.book_name}</p>
                                 <p><strong>Author:</strong> ${review.author_name}</p>
+                                <p><strong>Price:</strong> ${review.price}</p>
                                 <p><strong>Review:</strong> ${review.review}</p>
                             </div>
                         `;

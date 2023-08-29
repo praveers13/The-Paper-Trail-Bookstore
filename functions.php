@@ -17,7 +17,7 @@ class Review{
 	function read() {	
         if ($this->isbn) {
             $stmt = $this->conn->prepare("
-                SELECT * FROM ".$this->reviewTable." 
+                SELECT isbn, book_name, author_name, review FROM ".$this->reviewTable." 
                 WHERE isbn = ?");
             $stmt->bind_param("s", $this->isbn);					
         } else {
@@ -29,7 +29,7 @@ class Review{
     }
 
     function create(){
-		# SQL INSERT statement using a prepared statement to avoid SQL injection.
+        # SQL INSERT statement using a prepared statement to avoid SQL injection.
         $stmt = $this->conn->prepare("
             INSERT INTO ".$this->reviewTable."(isbn, book_name, author_name, price, review)
             VALUES(?,?,?,?,?)");
@@ -41,7 +41,7 @@ class Review{
         $this->review = htmlspecialchars(strip_tags($this->review));
         
         #The purpose of binding variables is to pass values safely into the SQL query while also handling data types and preventing SQL injection.
-        $stmt->bind_param("ssss", $this->isbn, $this->book_name, $this->author_name, $this->price, $this->review);
+        $stmt->bind_param("sssss", $this->isbn, $this->book_name, $this->author_name, $this->price, $this->review);
         
         if($stmt->execute()){
             return true;
@@ -49,6 +49,7 @@ class Review{
      
         return false;		 
     }
+    
 
     function update() {
         $stmt = $this->conn->prepare("
@@ -61,7 +62,7 @@ class Review{
         $this->price = htmlspecialchars(strip_tags($this->price));
         $this->review = htmlspecialchars(strip_tags($this->review));
      
-        $stmt->bind_param("ssss", $this->book_name, $this->author_name, $this->price, $this->review, $this->isbn);
+        $stmt->bind_param("sssss", $this->book_name, $this->author_name, $this->price, $this->review, $this->isbn);
         
         if($stmt->execute()){
             return true;
