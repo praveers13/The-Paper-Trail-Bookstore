@@ -55,14 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     updateButton.addEventListener("click", function() {
-        const isbn = updateIsbnInput.value.trim();
-        const bookName = updateBookNameInput.value.trim();
-        const authorName = updateAuthorNameInput.value.trim();
-        const price = updatePriceInput.value.trim();
-        const review = updateReviewInput.value.trim();
+        const isbn_up = updateIsbnInput.value.trim();
+        const bookName_up = updateBookNameInput.value.trim();
+        const authorName_up = updateAuthorNameInput.value.trim();
+        const price_up = updatePriceInput.value.trim();
+        const review_up = updateReviewInput.value.trim();
 
         if (isbn !== "") {
-            updateReview(isbn, bookName, authorName, review);
+            updateReview(isbn_up, bookName_up, authorName_up,price_up, review_up);
         } else {
             updateMessage.textContent = "Please enter an ISBN.";
         }
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchReviews(isbn) {
         reviewContainer.innerHTML = "Fetching reviews...";
     
-        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore?isbn=" + isbn)
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/read.php?isbn=" + isbn)
             .then(response => response.json())
             .then(data => {
                 if (data.records) {
@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="review-item">
                                 <p><strong>Book Name:</strong> ${review.book_name}</p>
                                 <p><strong>Author:</strong> ${review.author_name}</p>
-                                <p><strong>Price:</strong> ${review.price}</p>
                                 <p><strong>Review:</strong> ${review.review}</p>
                             </div>
                         `;
@@ -140,13 +139,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function updateReview(isbn, bookName, authorName,price, review) {
+    function updateReview(isbn_up, bookName_up, authorName_up,price_up, review_up) {
         const data = {
-            isbn: isbn,
-            book_name: bookName,
-            author_name: authorName,
-            price:price,
-            review: review
+            isbn: isbn_up,
+            book_name: bookName_up,
+            author_name: authorName_up,
+            price:price_up,
+            review: review_up
         };
 
         updateMessage.textContent = "Updating review...";
