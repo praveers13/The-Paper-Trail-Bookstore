@@ -1,3 +1,4 @@
+<!-- Consume soap service to validate ISBN -->
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $wsdl = 'http://webservices.daehosting.com/services/isbnservice.wso?WSDL';
@@ -9,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $request_param = array(
         'sISBN' => $ISBN
     );
-
+    // 2 types of ISBN codes to choose from
+    // use functions from existing soap web service
     try {
         switch ($isbn_type) {
             case 'ISBN13':
@@ -21,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $validationResult = $response_param->IsValidISBN10Result;
                 break;
         }
-
+        // print result
         if ($validationResult === true) {
             $status = "Valid " . $isbn_type;
         } else {

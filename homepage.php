@@ -221,6 +221,7 @@
 </head>
 
 <body>
+  <!-- navigation bar -->
   <header class="header">
     <a href="#" class="logo">The Paper Trail</a>
     <nav class="nav-items">
@@ -285,6 +286,7 @@
       <img src="The-Crying-Book.jpg" alt="me">
     </div>
   </main>
+  <!-- footer -->
   <footer class="footer">
     <div class="copy">&copy; 2023 Web Services Assignment</div>
     <div class="bottom-links">
