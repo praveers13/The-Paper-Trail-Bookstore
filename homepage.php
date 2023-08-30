@@ -233,10 +233,12 @@
     </nav>
   </header>
   <main>
+    <!-- Homepage intro -->
     <div class="intro">
       <h1>The Paper Trail Bookstore</h1>
       <p>Books are the plane, and the train, and the road. They are the destination, and the journey. They are home.</p>
       </div>
+      <!-- buttons to other pages with their functions -->
     <div class="achievements">
       <div class="work">
         <a href="isbn.php"> <i class="fa fa-book"></i></a>
@@ -256,7 +258,7 @@
     </div>
     <br>
     <h1>Bestsellers</h1>
-    
+    <!-- display best selling books in form of a table. Data is from bestseller.xml -->
     <?php
     $xml = simplexml_load_file('bestsellers.xml');
     
@@ -276,7 +278,7 @@
     
     echo '</table>';
     ?>
-
+  <!-- About us section -->
     <br><br>
     <div class="about-me">
       <div class="about-me-text">
