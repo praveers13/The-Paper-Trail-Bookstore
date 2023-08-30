@@ -1,6 +1,7 @@
 <?php
 require 'nusoap.php';
 
+// instantiate client with server info
 $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/bookstore_server.php?wsdl");
 
 ?>
@@ -130,6 +131,7 @@ $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Tr
   </style>
 </head>
 <body>
+  <!-- navigation bar -->
   <header class="header">
     <a href="#" class="logo">The Paper Trail</a>
     <nav class="nav-items">
@@ -141,6 +143,7 @@ $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Tr
     </nav>
   </header>
 
+  <!-- container and submit button to fetch price of book from ISBN -->
 <div class="container">
   <h2>Book Prices by ISBN</h2>
   <form class="form-inline" action="" method="POST">
@@ -153,12 +156,14 @@ $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Tr
   <p>&nbsp;</p>
   <h3>
   <?php
+  // call function get_price to retrieve price of book from database
 	if(isset($_POST['submit']))
 	{
 		$isbn = $_POST['isbn'];
 		
 		$response = $client->call('get_price',array("isbn"=>$isbn));
 
+    // result display
 		if(empty($response))
 			echo "Price of that book is not available";
 		else
@@ -167,6 +172,7 @@ $client = new nusoap_client("http://localhost/WebService_Assignment/The-Paper-Tr
    ?>
   </h3>
 </div>
+<!-- footer -->
 <footer class="footer">
     <div class="copy">&copy; 2023 Web Services Assignment</div>
     <div class="bottom-links">
