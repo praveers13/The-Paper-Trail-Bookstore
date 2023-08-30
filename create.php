@@ -22,7 +22,7 @@ $review = new Review($db);
 $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->isbn) && !empty($data->book_name) &&
-    !empty($data->author_name) && !empty($data->review)) {
+    !empty($data->author_name) && !empty($data->price) && !empty($data->review)) {
 
     $review->isbn = $data->isbn;
     $review->book_name = $data->book_name;
