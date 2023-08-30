@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const isbnInput = document.getElementById("isbn");
     const createIsbnInput = document.getElementById("createIsbn");
     const updateIsbnInput = document.getElementById("updateIsbn");
+    const updateBookNameInput = document.getElementById("updateBookName");
+    const updateAuthorNameInput = document.getElementById("updateAuthorName");
+    const updatePriceInput = document.getElementById("updatePrice");
+    const updateReviewInput = document.getElementById("updateReview");
     const deleteIsbnInput = document.getElementById("deleteIsbn");
     const bookNameInput = document.getElementById("book_name");
     const authorNameInput = document.getElementById("author_name");
+    const priceInput = document.getElementById("price");
     const reviewInput = document.getElementById("review");
     const reviewContainer = document.getElementById("reviewContainer");
     const createMessage = document.getElementById("createMessage");
@@ -39,23 +44,25 @@ document.addEventListener("DOMContentLoaded", function() {
         const isbn = createIsbnInput.value.trim();
         const bookName = bookNameInput.value.trim();
         const authorName = authorNameInput.value.trim();
+        const price = priceInput.value.trim();
         const review = reviewInput.value.trim();
 
-        if (isbn !== "" && bookName !== "" && authorName !== "" && review !== "") {
-            createReview(isbn, bookName, authorName, review);
+        if (isbn !== "" && bookName !== "" && authorName !== "" && price !== "" && review !== "") {
+            createReview(isbn, bookName, authorName, price, review);
         } else {
             createMessage.textContent = "Please fill in all fields.";
         }
     });
 
     updateButton.addEventListener("click", function() {
-        const isbn = updateIsbnInput.value.trim();
-        const bookName = updateBookNameInput.value.trim();
-        const authorName = updateAuthorNameInput.value.trim();
-        const review = updateReviewInput.value.trim();
+        const isbn_up = updateIsbnInput.value.trim();
+        const bookName_up = updateBookNameInput.value.trim();
+        const authorName_up = updateAuthorNameInput.value.trim();
+        const price_up = updatePriceInput.value.trim();
+        const review_up = updateReviewInput.value.trim();
 
         if (isbn !== "") {
-            updateReview(isbn, bookName, authorName, review);
+            updateReview(isbn_up, bookName_up, authorName_up,price_up, review_up);
         } else {
             updateMessage.textContent = "Please enter an ISBN.";
         }
@@ -74,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchReviews(isbn) {
         reviewContainer.innerHTML = "Fetching reviews...";
     
-        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore?isbn=" + isbn)
+        fetch("http://localhost/WebService_Assignment/The-Paper-Trail-Bookstore/read.php?isbn=" + isbn)
             .then(response => response.json())
             .then(data => {
                 if (data.records) {
@@ -100,11 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-    function createReview(isbn, bookName, authorName, review) {
+    function createReview(isbn, bookName, authorName, price, review) {
         const data = {
             isbn: isbn,
             book_name: bookName,
             author_name: authorName,
+            price: price,
             review: review
         };
 
@@ -131,12 +139,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function updateReview(isbn, bookName, authorName, review) {
+    function updateReview(isbn_up, bookName_up, authorName_up,price_up, review_up) {
         const data = {
-            isbn: isbn,
-            book_name: bookName,
-            author_name: authorName,
-            review: review
+            isbn: isbn_up,
+            book_name: bookName_up,
+            author_name: authorName_up,
+            price:price_up,
+            review: review_up
         };
 
         updateMessage.textContent = "Updating review...";
